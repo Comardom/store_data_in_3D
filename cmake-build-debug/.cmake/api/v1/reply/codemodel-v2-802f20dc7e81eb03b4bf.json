@@ -7,6 +7,10 @@
 				{
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
@@ -23,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Project",
+					"name" : "store_data_3D",
 					"targetIndexes" : 
 					[
 						0
@@ -34,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "new_target::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-new_target-Debug-c52429437e0fef36e991.json",
-					"name" : "new_target",
+					"id" : "store_data_3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-store_data_3D-Debug-ad878bccb95842da9e11.json",
+					"name" : "store_data_3D",
 					"projectIndex" : 0
 				}
 			]

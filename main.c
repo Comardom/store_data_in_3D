@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
-#define DIM_SIZE 1//每个维度的长
+#define DIM_SIZE 10//每个维度的长
 #define LONG_LONG_ERROR LLONG_MIN
 #define LONG_LONG_NULL (LLONG_MIN+1)
 #define STOP (LLONG_MIN+2)
@@ -91,7 +91,7 @@ void store_integer_on_3D_coordinates(void)
 				}
 			}//选择结束
 			getchar();
-			getchar();
+			// getchar();
 		}//else结束
 	}//循环结束
 }
@@ -127,22 +127,23 @@ void array_handle_main(int *part, bool part_is_been_typed , bool part_is_demical
 					printf("You have stopped it.\n");
 					goto break_the_input;//三层循环刚结束就是这个goto语句
 				}
-				else if(part_is_been_typed && temp_for_overflow_checking==LONG_LONG_NULL)
+				else
+				{
+					;
+				}
+				if(part_is_been_typed && temp_for_overflow_checking==LONG_LONG_NULL)
 				{
 					arr[i][j][k] = *(part + i * DIM_SIZE * DIM_SIZE + j * DIM_SIZE + k);
 					//这里是在保留原来的数据
 				}
+				else if(!part_is_been_typed && temp_for_overflow_checking==LONG_LONG_NULL && *(part + i * DIM_SIZE * DIM_SIZE + j * DIM_SIZE + k)==0)
+				{
+					arr[i][j][k] = 0;
+				}
 				else
 				{
-					if(*(part + i * DIM_SIZE * DIM_SIZE + j * DIM_SIZE + k)==0)
-					{
-						arr[i][j][k] = 0;
-					}
-					else
-					{
-						arr[i][j][k]=temp_for_overflow_checking;
+					arr[i][j][k]=temp_for_overflow_checking;
 					//不用管数据类型转换，已经保证没问题了
-					}
 				}
 			}
 		}
